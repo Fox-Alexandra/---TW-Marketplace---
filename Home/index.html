@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="../HOME/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <section id="barra_acessibilidade">
+                <!--Barra de acessibilidade-->
+                <ul class="barra_conteudo">
+                    <li><a href="#">Acessibilidade</a></li>
+                    <li><a href="#">A-</a></li>
+                    <li><a href="#">A+</a></li>
+                    <li><a href="#">Modo Noturno</a></li>
+                </ul>
+            </section>
+            <!--Fim barra de acessibilidade-->
+
+            <section>
+                <!--Menu superior-->
+                <nav id="menu_superior">
+                    <div class="logo">
+                        <a href="../Editado-Tw/index.html"><img src="../imagens/logo1.png"
+                                alt="Logo TWmarketplace"></a>
+                    </div>
+
+                    <div class="BarraPesquisa">
+                        <form action="Busca" method="GET" id="formulario_busca">
+                            <!--Barra de pesquisa-->
+                            <input type="search" name="Busca" class="input_buscar" placeholder="Buscar...">
+                            <img id="lupa" src="../imagens/pesquisa.png" alt="Pesquisar">
+                        </form>
+                    </div>
+
+                    <div class="icones_compras_mensagem">
+                        <a href="#"><img id="sacola_compras" src="../imagens/028-shopping bags.png"
+                                alt="Sacola de pedidos"></a>
+
+                        <a href="#"><img id="mensagens" src="../imagens/message.png" alt="Notificações"></a>
+                    </div>
+
+                    <div class="minhaconta_sair">
+                        <ul>
+                            <li><a href="../Editado-Tw/PerfilUsuário_MeusPedidos.html" class="botao_minhaconta">Minha
+                                    Conta</a></li>
+                            <li><a href="../Editado-Tw/login.html" class="botao_sair">Sair</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </div>
+        <!--Fim menu superior-->
+
+        <div class="menu_inferior_home">
+            <section>
+                <nav id="menu_inferior">
+                    <!--Menu inferior-->
+                    <ul>
+                        <!--Menu categorias-->
+                        <li><a href="#">
+                                <!--Notebooks-->
+                                <div class="lista_categorias">
+                                    <img src="../imagens/Hover/laptop.png" alt="Notebooks" class="notebooks">
+                                    <img src="../imagens/laptop.png" alt="Notebooks">
+                                </div>
+                            <p>Notebooks</p>
+                        </a></li>
+
+                        <li><a href="#">
+                                <!--Smartphones-->
+                                <div class="lista_categorias">
+                                    <img src="../imagens/Hover/mobile-phone.png" alt="Smartphones" class="smartphones">
+                                    <img src="../imagens/mobile-phone.png" alt="Smartphones">
+                                </div>
+                            <p>Smartphones</p>
+                        </a></li>
+
+                        <li><a href="#">
+                                <!--Impressoras-->
+                                <div class="lista_categorias">
+                                    <img src="../imagens/Hover/printer.png" alt="Impressoras" class="impressoras">
+                                    <img src="../imagens/printer.png" alt="Impressoras">
+                                </div>
+                            <p>Impressoras</p>
+                        </a></li>
+
+                        <li><a href="#">
+                                <!--Monitores-->
+                                <div class="lista_categorias">
+                                    <img src="../imagens/Hover/television.png" alt="Monitores" class="monitores">
+                                    <img src="../imagens/television.png" alt="Monitores">
+                                </div>
+                            <p>Monitores</p>
+                        </a></li>
+
+                        <li><a href="#">
+                                <!--Acessórios-->
+                                <div class="lista_categorias">
+                                    <img src="../imagens/Hover/usb.png" alt="Acessórios" class="acessorios">
+                                    <img src="../imagens/usb.png" alt="Acessórios">
+                                </div>
+                            <p>Acessórios</p>
+                        </a></li>
+
+                        <li><a href="#">
+                                <!--Todas categorias-->
+                                <div class="lista_categorias">
+                                    <img src="../imagens/Hover/Categorias.png " alt="Todas as Categorias" class="todas_as_categorias">
+                                    <img src="../imagens/Categorias.png" alt="Todas as Categorias">
+                                </div>
+                            <p>Todas categorias</p>
+                        </a></li>
+                    </ul>
+                    <!--Fim menu categorias-->
+                </nav>
+            </section>
+            <!--Fim menu inferior-->
+        </div>
+        <hr class="hr">
+    </header>
+    <!--Fim menu-->
+    <main id="home_main">
+        <sectiom id="home_banner">
+            <ul class="slider">
+                <li>
+                    <input type="radio" name="slide" id="slide1" checked>
+                    <label for="slide1"></label>
+                    <img src="../imagens/banner1.jpg" alt="">
+                </li>
+                <li>
+                    <input type="radio" name="slide" id="slide2">
+                    <label for="slide2"></label>
+                    <img src="../imagens/facebook-cover-mm-3d-skull-kid-in-the-woods.png" alt="">
+                </li>
+                <li>
+                    <input type="radio" name="slide" id="slide3">
+                    <label for="slide3"></label>
+                    <img src="../imagens/capa-para-facebook-abstrata (30).jpg" alt="">
+                </li>
+            </ul>       
+        </sectiom><!--Fim home_banner-->
+        <hr class="hr">
+
+        <section id="img1"><!--Seção img1 = uma area do site onde os produtos podem ser classificados/ Local onde ficaram os produtos divididos (ex. fotos de varios notebooks)-->
+            <nav class="filtro">
+                    <h2>Notebooks</h2>
+                    <ul>
+                        <li><a href="#">Marca ></a></li>
+                        <li><a href="#">Condição ></a></li>
+                    </ul>
+            </nav>
+            <div id="containers">  
+                <div class="container">
+                    <div class="grid">
+                        <a href="../Editado-Tw/DescriçaoProduto.html"><img src="../imagens/note1.jpg" alt=""></a>
+                        <span class="valor">R$000</span>
+                    </div>
+                    <div class="grid">
+                        <a href="#"><img src="../imagens/note2.jpg" alt=""></a>
+                        <span class="valor">R$000</span>
+                    </div>
+                    <div class="grid">
+                        <a href="#"><img src="../imagens/note3.jpg" alt=""></a>
+                        <span class="valor">R$000</span>
+                    </div>
+                    <div class="grid">
+                        <a href="#"><img src="../imagens/note6.jpg" alt=""></a>
+                        <span class="valor">R$000</span>
+                    </div>
+                    <div class="grid">
+                        <a href="#"><img src="../imagens/note4.jpg" alt=""></a>
+                        <span class="valor">R$000</span>
+                    </div>
+                    <div class="grid">   
+                        <a href="#"> <img src="../imagens/note5.jpg" alt=""></a>
+                        <span class="valor">R$000</span>
+                    </div>             
+                </div><!--Fim container-->
+                <div class="grid-8">    
+                    <a href="#"><img src="../imagens/note3.jpg" alt=""></a>
+                    <span class="valor_Maior">R$000</span>
+                </div>  
+            </div>
+            <a href="#" class="botao">Ver mais >>></a>
+        </section><!--Fim img1-->
+        <hr class="hr">
+
+        <section id="img2"><!--Seção img2 = uma area do site onde os produtos podem ser classificados/ Local onde ficaram os produtos divididos (ex. fotos de varios smartphones)-->
+            <nav class="filtro">
+                <h2>Smartphones</h2>
+                <ul>
+                    <li><a href="#">Marca ></a></li>
+                    <li><a href="#">Condição ></a></li>
+                </ul>
+            </nav>
+            <div id="containers">  
+                    <div class="container">
+                        <div class="grid">
+                            <a href="../Editado-Tw/DescriçaoProduto.html"><img src="imagens/phone3.jpg" alt="" ></a>
+                            <span class="valor">R$000</span>
+                        </div>
+                        <div class="grid">
+                            <a href="#"><img src="../imagens/phone7.jpg" alt=""></a>
+                            <span class="valor">R$000</span>
+                        </div>
+                        <div class="grid">
+                            <a href="#"><img src="../imagens/phone6.jpg" alt=""></a>
+                            <span class="valor">R$000</span>
+                        </div>
+                        <div class="grid">
+                            <a href="#"><img src="../imagens/phone5.jpg" alt=""></a>
+                            <span class="valor">R$000</span>
+                        </div>
+                        <div class="grid">
+                            <a href="#"><img src="../imagens/phone4.jpg" alt=""></a>
+                            <span class="valor">R$000</span>
+                        </div>
+                        <div class="grid">   
+                            <a href="#"> <img src="../imagens/phone3.jpg" alt=""></a>
+                            <span class="valor">R$000</span>
+                        </div>             
+                    </div><!--Fim conteiner-->
+                    <div class="grid-8">    
+                        <a href="#"><img src="../imagens/phone2.jpg" alt=""></a>
+                        <span class="valor_Maior">R$000</span>
+                    </div>  
+                </div>
+                <a href="#" class="botao">Ver mais >>></a>
+        </section><!--Fim img2-->
+    </main><!--Fim main-->
+    
+    <hr class="hrHome">
+    <footer class="footerHome">
+        <img class="logo_thw" src="../imagens/rodape.png" alt="Imagem do Logo da ThougthWorks">
+        <p class="texto_rodape">
+            ThougthWorks MarketPlace © 2019 - Todos os direitos reservados - TWmarketplace.com.br atividades de internet
+            LTDA <br> CNPJ: 99.999.999/9999-99
+            Rua dos Alfineiros, 4, Surrey, Londres, 99999-999 - (11) 9999-9999
+        </p>
+    </footer>
+
+</body>
+
+</html>
