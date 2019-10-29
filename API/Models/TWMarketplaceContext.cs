@@ -25,7 +25,7 @@ namespace API.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-CJ1NQH4\\SQLEXPRESS;Database=TWMarketplace;Trusted_Connection=True;");
             }
         }
@@ -35,7 +35,7 @@ namespace API.Models
             modelBuilder.Entity<Categoria>(entity =>
             {
                 entity.HasKey(e => e.IdCategoria)
-                    .HasName("PK__Categori__CD54BC5A2C46148D");
+                    .HasName("PK__Categori__CD54BC5AB7C81DBC");
 
                 entity.Property(e => e.CategoriaProduto).IsUnicode(false);
             });
@@ -43,23 +43,23 @@ namespace API.Models
             modelBuilder.Entity<Interesse>(entity =>
             {
                 entity.HasKey(e => e.IdInteresse)
-                    .HasName("PK__Interess__9AA7BC1A5CFEE721");
+                    .HasName("PK__Interess__9AA7BC1AA4CC1F1E");
 
                 entity.HasOne(d => d.IdProdutoNavigation)
                     .WithMany(p => p.Interesse)
                     .HasForeignKey(d => d.IdProduto)
-                    .HasConstraintName("FK__Interesse__id_pr__4316F928");
+                    .HasConstraintName("FK__Interesse__id_pr__440B1D61");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Interesse)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Interesse__id_us__4222D4EF");
+                    .HasConstraintName("FK__Interesse__id_us__4316F928");
             });
 
             modelBuilder.Entity<Permissao>(entity =>
             {
                 entity.HasKey(e => e.IdPermissao)
-                    .HasName("PK__Permissa__F9E467D5CBDABAFD");
+                    .HasName("PK__Permissa__F9E467D57D4B7C8B");
 
                 entity.Property(e => e.TipoUsuario).IsUnicode(false);
             });
@@ -67,7 +67,7 @@ namespace API.Models
             modelBuilder.Entity<Produtos>(entity =>
             {
                 entity.HasKey(e => e.IdProduto)
-                    .HasName("PK__Produtos__BA38A6B8E55AE597");
+                    .HasName("PK__Produtos__BA38A6B867840BC0");
 
                 entity.Property(e => e.Descricao).IsUnicode(false);
 
@@ -82,10 +82,10 @@ namespace API.Models
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__4E3E04AD55C58895");
+                    .HasName("PK__Usuario__4E3E04AD1676CC8E");
 
                 entity.HasIndex(e => e.Email)
-                    .HasName("UQ__Usuario__AB6E6164AB6F452F")
+                    .HasName("UQ__Usuario__AB6E61640513DC99")
                     .IsUnique();
 
                 entity.Property(e => e.Email).IsUnicode(false);

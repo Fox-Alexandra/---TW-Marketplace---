@@ -10,12 +10,12 @@ namespace API.Models
         [Key]
         [Column("id_interesse")]
         public int IdInteresse { get; set; }
-
         [Column("id_usuario")]
-        public int IdUsuario { get; set; }
-        
+        public int? IdUsuario { get; set; }
         [Column("id_produto")]
-        public int IdProduto { get; set; }
+        public int? IdProduto { get; set; }
+        [Column("status_Compra")]
+        public bool StatusCompra { get; set; }
 
         [ForeignKey(nameof(IdProduto))]
         [InverseProperty(nameof(Produtos.Interesse))]

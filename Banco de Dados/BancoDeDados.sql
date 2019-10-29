@@ -13,6 +13,7 @@ CREATE TABLE Permissao(
 	tipo_Usuario VARCHAR (50)
 );
 
+
 CREATE TABLE Usuario (
 	id_usuario INT IDENTITY PRIMARY KEY NOT NULL,
 	nome VARCHAR(50),
@@ -27,12 +28,14 @@ CREATE TABLE Produtos (
 	descricao VARCHAR(250),
 	preco MONEY,
 	id_categoria INT FOREIGN KEY REFERENCES Categoria(id_categoria),
+	status_Compra BIT DEFAULT(0) NOT NULL
 );
 
 CREATE TABLE Interesse (
 	id_interesse INT IDENTITY PRIMARY KEY NOT NULL,
 	id_usuario INT FOREIGN KEY REFERENCES Usuario(id_usuario),
-	id_produto INT FOREIGN KEY REFERENCES Produtos(id_produto)
+	id_produto INT FOREIGN KEY REFERENCES Produtos(id_produto),
+	status_Compra BIT DEFAULT(0) NOT NULL
 );
 
 INSERT INTO Categoria (categoria_Produto)

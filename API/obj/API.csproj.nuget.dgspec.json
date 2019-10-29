@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\GitHub\\TW\\API\\API.csproj": {}
+    "C:\\Users\\fic\\Desktop\\GitHub\\---TW-Marketplace---\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\GitHub\\TW\\API\\API.csproj": {
+    "C:\\Users\\fic\\Desktop\\GitHub\\---TW-Marketplace---\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\GitHub\\TW\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Desktop\\GitHub\\---TW-Marketplace---\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\fic\\Desktop\\GitHub\\TW\\API\\API.csproj",
+        "projectPath": "C:\\Users\\fic\\Desktop\\GitHub\\---TW-Marketplace---\\API\\API.csproj",
         "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\GitHub\\TW\\API\\obj\\",
+        "outputPath": "C:\\Users\\fic\\Desktop\\GitHub\\---TW-Marketplace---\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,7 +41,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "(, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
