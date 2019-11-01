@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Models;
+using API_HOME.repositorio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,93 +12,29 @@ namespace API.Controllers
     public class CategoriaController : ControllerBase
     {
         TWMarketplaceContext context = new TWMarketplaceContext();
+        CategoriaRepositorio repositorio = new CategoriaRepositorio();
 
         [HttpGet]
-        public async Task<ActionResult<List<Categoria>>> Get (){
-            var categorias = await context.Categoria.ToListAsync();
+        public async Task<ActionResult<List<Categoria>>> Get ()
+        { /*Puxa por qualquer categoria*/
+            var categorias = await context.Categoria.ToListAsync();/*Variavel categorias recebe do banco de dados Categoria minha lista*/
 
-            if(categorias == null){
+            if(categorias == null){ /*Se minha Categorias for nulo ele da erro. Caso contrario ele retorna minha Categorias*/
                 return NotFound();
             }
-
             return categorias;
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Categoria>> Get(int id)
+        [HttpGet("{categoria_produto}")]
+        public async Task<ActionResult<Categoria>> Get(string categoria_produto)/*Puxa apenas pelo categoria_produto */
         {
-            var categoria = await context.Categoria.FindAsync(id);
+            var categoria = repositorio.Get(categoria_produto.ToLower());/*Variavel categorias recebe do banco de dados minha categoria por categoria_produto */
 
             if (categoria == null)
-            {
+            {/*Se minha categorias for nulo ele da erro. Caso contrario ele retorna por categoria_produto */
                 return NotFound();
             }
-
-            return categoria;
+            return await categoria;
         }
-
-        [HttpPost]
-        public async Task<ActionResult<Categoria>> Post(Categoria categoria)
-        {
-            try
-            {
-                await context.AddAsync(categoria);
-                await context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                throw;
-            }
-
-            return categoria;
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(long id, Categoria categoria)
-        {
-            if (id != categoria.IdCategoria)
-            {
-                return BadRequest();
-            }
-
-            context.Entry(categoria).State = EntityState.Modified;
-
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                var categoria_valido = await context.Categoria.FindAsync(id);
-
-                if (categoria_valido == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Categoria>> Delete(int id)
-        {
-            var categoria = await context.Categoria.FindAsync(id);
-            if (categoria == null)
-            {
-                return NotFound();
-            }
-
-            context.Categoria.Remove(categoria);
-            await context.SaveChangesAsync();
-
-            return categoria;
-        }
-
     }
-
 }

@@ -25,8 +25,9 @@ namespace API.Models
         public decimal? Preco { get; set; }
         [Column("id_categoria")]
         public int? IdCategoria { get; set; }
+        [Required]
         [Column("status_Compra")]
-        public bool StatusCompra { get; set; }
+        public bool? StatusCompra { get; set; }
 
         [ForeignKey(nameof(IdCategoria))]
         [InverseProperty(nameof(Categoria.Produtos))]

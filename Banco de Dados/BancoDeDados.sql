@@ -22,13 +22,25 @@ CREATE TABLE Usuario (
 	id_permissao INT FOREIGN KEY REFERENCES Permissao(id_permissao)
 );
 
+CREATE TABLE Img_Usuario (
+	id_imgUsuario INT IDENTITY PRIMARY KEY NOT NULL,
+	caminho_img VARCHAR(100),
+	id_usuario INT FOREIGN KEY REFERENCES Usuario(id_usuario)
+);
+
 CREATE TABLE Produtos (
 	id_produto INT IDENTITY PRIMARY KEY NOT NULL,
 	nome VARCHAR(50),
 	descricao VARCHAR(250),
 	preco MONEY,
 	id_categoria INT FOREIGN KEY REFERENCES Categoria(id_categoria),
-	status_Compra BIT DEFAULT(0) NOT NULL
+	status_Compra BIT DEFAULT(1) NOT NULL
+);
+
+CREATE TABLE Img_Produto (
+	id_imgProduto INT IDENTITY PRIMARY KEY NOT NULL,
+	caminho_img VARCHAR(100),
+	id_produto INT FOREIGN KEY REFERENCES Produtos(id_produto)
 );
 
 CREATE TABLE Interesse (
@@ -36,6 +48,12 @@ CREATE TABLE Interesse (
 	id_usuario INT FOREIGN KEY REFERENCES Usuario(id_usuario),
 	id_produto INT FOREIGN KEY REFERENCES Produtos(id_produto),
 	status_Compra BIT DEFAULT(0) NOT NULL
+);
+
+CREATE TABLE Retorno_Interesse (
+	id_retorno INT IDENTITY PRIMARY KEY NOT NULL,
+	id_interesse INT FOREIGN KEY REFERENCES Interesse(id_interesse),
+	status_Interesse VARCHAR(50)
 );
 
 INSERT INTO Categoria (categoria_Produto)
@@ -77,6 +95,12 @@ VALUES		('Dell Inspiron','Notebook com poucos arranhões',1500,1),
 			('Modem TP-LINK','Modem roteador TP-LINK 500',20,9),
 			('Xiaomi Mi A3','Celular Xiaomi com a tela trincada',300,2),
 			('Macbook','Macbook 8GB ',1.700,1);
+
+INSERT INTO Img_Produto (caminho_img)
+VALUES ('/images/produtos/prod50156.png');
+
+INSERT INTO Img_Usuario(caminho_img)
+VALUES ('/images/produtos/prod50156.png');
 
 INSERT INTO Interesse (id_usuario, id_produto)
 VALUES

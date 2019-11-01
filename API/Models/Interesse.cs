@@ -7,6 +7,11 @@ namespace API.Models
 {
     public partial class Interesse
     {
+        public Interesse()
+        {
+            RetornoInteresse = new HashSet<RetornoInteresse>();
+        }
+
         [Key]
         [Column("id_interesse")]
         public int IdInteresse { get; set; }
@@ -23,5 +28,7 @@ namespace API.Models
         [ForeignKey(nameof(IdUsuario))]
         [InverseProperty(nameof(Usuario.Interesse))]
         public virtual Usuario IdUsuarioNavigation { get; set; }
+        [InverseProperty("IdInteresseNavigation")]
+        public virtual ICollection<RetornoInteresse> RetornoInteresse { get; set; }
     }
 }
