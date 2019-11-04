@@ -34,7 +34,7 @@ CREATE TABLE Produtos (
 	descricao VARCHAR(250),
 	preco MONEY,
 	id_categoria INT FOREIGN KEY REFERENCES Categoria(id_categoria),
-	status_Compra BIT DEFAULT(1) NOT NULL
+	status_Produto BIT DEFAULT(1) NOT NULL
 );
 
 CREATE TABLE Img_Produto (
